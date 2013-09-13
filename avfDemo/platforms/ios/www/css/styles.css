@@ -1,0 +1,24 @@
+body {
+	background-image:url('../img/tree.png');
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+li {
+	background: rgba(200, 255, 255, 0.25) !important;
+}
+
+/* For general iPad layouts */
+@media only screen and (device-width: 768px) {
+	
+}
+
+/* For portrait layouts only */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+	body {background-image:url('../img/tree.png')};
+}
+
+/* For landscape layouts only */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+	body {background-image:url('../img/shore.jpg') !important};
+}
