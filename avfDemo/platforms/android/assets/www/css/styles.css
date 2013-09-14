@@ -34,6 +34,7 @@ body {
 .research {
 	background: rgba(200, 255, 255, 0.50);
 }
+
 /* For general iPad layouts */
 @media only screen and (device-width: 768px) {
 	

@@ -7,43 +7,94 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>VFW Demo App</title>
+        <title>Demo App</title>
+        <meta name="description" content="AVF 1309 Demo App - Full Sail University" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/> 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
         
         <script src="js/libs/modernizr.custom.min.js"></script>
     </head>
     <body>
+    	<!-- Main Div -->
         <div id="main">
+        	<!-- Home Page -->
             <section id="home" data-role="page" style="background:transparent;">
                 <div data-role="header" data-position="fixed">
-                    <h1>VFW Demo App</h1>
+                    <h1>Demo App</h1>
                 </div>
                 <section data-role="content">
                     <ul data-role="listview" data-ajax="false" data-inset="true" data-theme="d">
                         <li data-role="list-divider">Native Features</li>
-                        <li><a href="">Camera</a></li>
-                        <li><a href="">Video</a></li>
-                        <li><a href="">Compass</a></li>
-                        <li><a href="">Geolocation</a></li>
-                        <li><a href="">Accelerometer</a></li>
+                        <li class='mainNav'><a href="">Camera</a></li>
+                        <li class='mainNav'><a href="">Video</a></li>
+                        <li class='mainNav'><a href="">Compass</a></li>
+                        <li class='mainNav'><a href="">Geolocation</a></li>
+                        <li class='mainNav'><a href="">Accelerometer</a></li>
                     </ul>
                     <ul data-role="listview" data-ajax="false" data-inset="true" data-theme="d">
                         <li data-role="list-divider">Data API's</li>
-                        <li><a href="">Weather</a></li>
-                        <li><a href="">Instagram</a></li>
+                        <li class='mainNav'><a href="#weather">Weather</a></li>
+                        <li class='mainNav'><a href="#insta">Instagram</a></li>
                     </ul>
                     <ul data-role="listview" data-ajax="false" data-inset="true" data-theme="d">
                         <li data-role="list-divider">Research</li>
-                        <li><a href="">Week One: Industry Research and Project Intent</a></li>
-                        <li><a href="">Week Two: Research</a></li>
-                        <li><a href="">Week Three: Research</a></li>
+                        <li class='mainNav'><a href="#week1">Week One: Industry Research and Project Intent</a></li>
+                        <li class='mainNav'><a href="">Week Two: Research</a></li>
+                        <li class='mainNav'><a href="">Week Three: Research</a></li>
                     </ul>
                 </section>
             </section> <!-- End of Home section -->
+            <!-- Instagram Page -->
+            <section id="insta" data-role="page" style="background:transparent;">
+	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+		            <a href="#" data-rel="back">Back</a><h1>Instagram API</h1>
+	            </div>
+	            <section data-role="content">
+			        <ul id="dataOut">
+		            </ul>
+	            </section> <!-- End of content -->
+            </section> <!-- End of Insta section -->
+            <!-- Weather Page -->
+            <section id="weather" data-role="page" style="background:transparent;">
+	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+		            <a href="#" data-rel="back">Back</a><h1>Weather API</h1>
+	            </div>
+	            <section data-role="content">
+		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d">
+			            
+		            </ul>
+	            </section> <!-- End of content -->
+            </section> <!-- End of Weather section -->
+            <!-- Week 1 Research -->
+            <section id="week1" data-role="page" style="background:transparent;">
+                <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Week 1:Research and Intent</h1>
+                </div>
+                <div data-role="collapsible" class="research">
+	                <h4>Industry Research and Project Intent</h4>
+	                <p><strong>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</strong></p>
+	                <p>Twitter accounts could be linked with other accounts as a verified form of identity. Linking social media accounts such as Twitter with other logins and payment accounts creates an ease of use, and on over all more simplistic way to manage several different accounts.  I personally log into several different websites and forums with my Facebook profile.  It is definitely easier to manage one login and password.  Security plays a big role in the matter, and linking a Twitter account would add that extra layer of security over that particular site.</p>
+	                <p><strong>Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</strong></p>
+	                <p>JSON with padding allows us to request data from a server located in a different domain than the one the application is located in.  This is typically not allowed due to the same origin policy.  The data obtained is in the form of JavaScript code and is evaluated by a JavaScript interpreter, eliminating the need for a JSON parser.</p>
+	                <p><strong>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</strong></p>
+	                <ul>
+		                <li>Camera - Social Media sites; forums; auction sites.</li>
+		                <li>Geolocation - Adventure tracking sites; LoJack; Urbanspoon</li>
+		                <li>Contacts - iCloud; Lookout.com</li>
+	                </ul>
+	                <p><strong>Please describe any design and functionality intentions you may have for your Demo app components this month.</strong></p>
+	                <p>I've been thinking about this quite a bit.  As of right now, I would definitely like to add Fantasy Football functionality to track my Fantasy Football League and team this season.  I'd like to pull league messages and updates down from Fox as well as player information 
+	                	and scores. Another idea is to create an exercise app with weather information for jogging, gym locations nearby, and the ability to upload pictures of workouts and results.</p>
+					<p><strong>Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.</strong></p>
+					<p>One major lesson I have learned has to do with time management.  We live in a busy world, and I'm sure all of us have responsibilities outside of school.  It is important to maintain a good schedule and try to lay out a 
+						good plan on when you'll have time to work on projects. Research is key when developing, and laying out a plan for anything that you do.  It's also a good idea to get opinions from your peers and test markets targeted for your applications.e</p>
+	            </div>
+            </section> <!-- End of week1 -->
         </div> <!-- End of main div -->
+        <!-- Linking javascript files -->
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
