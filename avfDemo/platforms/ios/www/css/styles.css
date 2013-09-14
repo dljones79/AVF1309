@@ -1,0 +1,107 @@
+body {
+	background-image:url('../img/tree.png');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	text-shadow: 1px 1px 0px #25135c;
+}
+
+.mainNav {
+	background: rgba(200, 255, 255, 0.25) !important;
+}
+
+.imgLi {
+	background: transparent !important;
+	display: inline-table !important;
+	box-shadow: 2px 2px 4px #888888;
+}
+
+#currentWeather {
+	background: rgba(200, 255, 255, 0.43) !important;
+	border: 1px solid black;
+	padding: 3%;
+}
+
+#weather {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: large;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px #25135c;
+}
+
+.research {
+	background: rgba(200, 255, 255, 0.50);
+}
+/* For general iPad layouts */
+@media only screen and (device-width: 768px) {
+	
+}
+
+/* For portrait layouts only */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+	body {background-image:url('../img/tree.png') !important};
+	.ui-page {
+		background: url('../img/tree.png') no-repeat;
+		max-width: 100%;
+		text-shadow: 1px 1px 0px #25135c;
+	}
+	
+	.mainNav {
+	background: rgba(200, 255, 255, 0.25) !important;
+	}
+
+	.imgLi {
+		background: transparent !important;
+		display: inline-table !important;
+		box-shadow: 10px 10px 5px #888888;
+	}
+
+	#currentWeather {
+		background: rgba(200, 255, 255, 0.43) !important;
+		border: 1px solid black;
+		padding: 3%;
+	}
+
+	#weather {
+		text-align: center;
+		font-family: sans-serif;
+		font-size: large;
+		font-weight: bold;
+		text-shadow: 1px 1px 0px #25135c;
+	}	
+}
+
+/* For landscape layouts only */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+	body {background-image:url('../img/shore.jpg') !important};
+	.ui-page {
+		background: url('../img/shore.jpg') no-repeat;
+		max-width: 100%;
+		text-shadow: 1px 1px 0px #25135c;
+	}
+	.mainNav {
+		background: rgba(200, 255, 255, 0.25) !important;
+	}
+
+	.imgLi {
+		background: transparent !important;
+		display: inline-table !important;
+		box-shadow: 10px 10px 5px #888888;
+	}
+
+	#currentWeather {
+		background: rgba(200, 255, 255, 0.43) !important;
+		border: 1px solid black;
+		padding: 3%;
+		}
+
+	#weather {
+		text-align: center;
+		font-family: sans-serif;
+		font-size: large;
+		font-weight: bold;
+		text-shadow: 1px 1px 0px #25135c;
+	}
+}
