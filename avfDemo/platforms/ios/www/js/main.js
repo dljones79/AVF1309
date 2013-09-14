@@ -37,7 +37,7 @@ var displayWeather = function(){
 			var currentWeather = $(
 			 "<li>Location: " + location + "</li>" +
 			 "<li>Temperature: " + temp_f + "</li>"
-			)
+			);
 			
 			$("#currentWeather").append(currentWeather);
 			
