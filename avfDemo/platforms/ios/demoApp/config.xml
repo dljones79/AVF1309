@@ -18,6 +18,7 @@
     <access origin="https://*.instagram.com" />
     <access origin="http://*.wunderground.com" />
     <access origin="https://*.wundergound.com" />
+    <access origin="*" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="SuppressesIncrementalRendering" value="false" />
     <preference name="UIWebViewBounce" value="true" />
