@@ -12,9 +12,8 @@ body {
 }
 
 .imgLi {
-	background: transparent !important;
-	display: inline-table !important;
-	box-shadow: 2px 2px 4px #888888;
+/*	display: inline-table !important; */
+	max-width: 100%;
 }
 
 #currentWeather {
@@ -48,9 +47,8 @@ body {
 	}
 
 	.imgLi {
-		background: transparent !important;
-		display: inline-table !important;
-		box-shadow: 10px 10px 5px #888888;
+/*		display: inline-table !important; */
+		max-width: 100%;
 	}
 
 	#currentWeather {
@@ -81,9 +79,8 @@ body {
 	}
 
 	.imgLi {
-		background: transparent !important;
-		display: inline-table !important;
-		box-shadow: 10px 10px 5px #888888;
+/*		display: inline-table !important; */
+		max-width: 100%;
 	}
 
 	#currentWeather {
