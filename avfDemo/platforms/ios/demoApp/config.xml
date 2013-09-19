@@ -23,6 +23,12 @@
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera" />
     </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
     <access origin="http://127.0.0.1*" />
     <access origin="http://www.instagram.com" />
     <access origin="https://www.instagram.com" />

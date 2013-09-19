@@ -3,14 +3,14 @@
 // Demo App
 
 var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value
+var destinationType; // sets the format of returned value
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 		$("#insta").on("pageinit", displayInstaPics);
 		$("#weather").on("pageinit", displayWeather);
-		//$("#getHeading").on("click", displayHeading);
+		//$("#notification").on("pageinit", runNotifications);
 		pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
@@ -53,21 +53,7 @@ var displayWeather = function(){
 	});	
 };
 
-/*
-var displayHeading = function(){
-	navigator.compass.getCurrentHeading(headingSuccess, headingError);
-	
-	var headingSuccess = function(){
-		alert('Current Heading is: ' + heading.magneticHeading);
-	}
-	
-	var headingError = function(){
-		alert('Compass has an error: ' + compassError.code);
-	}
-}
-*/
-
-/////////////////////////////////
+/////////////////////////////////Camera Test
 
     // Called when a photo is successfully retrieved
     //
@@ -139,7 +125,7 @@ var displayHeading = function(){
     function onFail(message) {
       alert('Failed because: ' + message);
     }
-//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////Geolocate Test
 
 function onSuccess(position) {
         var element = document.getElementById('geolocation');
@@ -161,3 +147,48 @@ alert('Latitude: ' + position.coords.latitude + '\n');
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
+
+///////////////////////////Notifications
+
+function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+    // Beep three times
+    //
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibrate for 2 seconds
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+/*
+var runNotifications = function(){
+	var showNotify = function(){
+		navigator.notification.alert(
+			'This is an alert!',
+			'Alert',
+			'Finished'
+		);
+	}
+	
+	var playNotify = function(){
+		navigator.notification.beep(3);
+	}
+	
+	var vibe = function(){
+		navigator.notification.vibrate(2000);
+	}
+	
+	$("#show").on("click", showNotify, false);
+	$("#play").on("click", playNotify, false);
+	$("#shake").on("click", vibe, false);
+}
+*/  

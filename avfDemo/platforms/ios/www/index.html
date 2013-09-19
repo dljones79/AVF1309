@@ -28,7 +28,7 @@
                     <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
                         <li data-role="list-divider">Native Features</li>
                         <li><a href="#camera">Camera</a></li>
-                        <li><a href="#compass">Compass</a></li>
+                        <li><a href="#notification">Notifications</a></li>
                         <li><a href="#geolocate">Geolocation</a></li>
                         <li><a href="">Accelerometer</a></li>
                     </ul>
@@ -64,15 +64,21 @@
 		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d"></ul>
 	            </section> <!-- End of content -->
             </section> <!-- End of Weather section -->
+            
+<!-- Testing code -->            
+
             <section id="geolocate" data-role="page" style="background:transparent;">
 	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
-                    <a href="#" data-rel="back">Back</a><h1>Compass</h1>
+                    <a href="#" data-rel="back">Back</a><h1>Geolocate</h1>
                 </div>
                 <section data-role="content">
                 	<p id="geolocation">Finding geolocation...</p>
                 </section>
             </section>
             <section id="camera" data-role="page" style="background:transparent;">
+            	<div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Camera</h1>
+                </div>
 	            <section data-role="content">
 		            <button onclick="capturePhoto();">Capture Photo</button> <br>
 				    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
@@ -82,6 +88,26 @@
 				    <img style="display:none;" id="largeImage" src="" />
 	            </section>
             </section>
+            <section id="notification" data-role="page" style="background:transparent;">
+            	<div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Notifications</h1>
+                </div>
+	            <section data-role="content">
+	            <!--
+		            <div data-role="controlgroup">
+			            <a href="#" data-role="button" id="show">Show Notification!</a>
+			            <a href="#" data-role="button" id="play">Play Sound!</a>
+			            <a href="#" data-role="button" id="shake">Shake Your Moneymaker!</a>
+			        </div>
+			     -->
+				     <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+				     <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
+				     <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
+	            </section>
+            </section>
+       
+<!-- Testing code -->
+            
             <!-- Week 1 Research -->
             <section id="week1" data-role="page" style="background:transparent;">
                 <div data-role="header" data-position="fixed" data-add-back-btn="true">
