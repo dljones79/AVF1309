@@ -27,9 +27,9 @@
                 <section data-role="content">
                     <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
                         <li data-role="list-divider">Native Features</li>
-                        <li><a href="">Camera</a></li>
+                        <li><a href="#camera">Camera</a></li>
                         <li><a href="#compass">Compass</a></li>
-                        <li><a href="">Geolocation</a></li>
+                        <li><a href="#geolocate">Geolocation</a></li>
                         <li><a href="">Accelerometer</a></li>
                     </ul>
                     <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
@@ -64,16 +64,23 @@
 		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d"></ul>
 	            </section> <!-- End of content -->
             </section> <!-- End of Weather section -->
-            <section id="compass" data-role="page" style="background:transparent;">
+            <section id="geolocate" data-role="page" style="background:transparent;">
 	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
                     <a href="#" data-rel="back">Back</a><h1>Compass</h1>
                 </div>
                 <section data-role="content">
-                	<form>
-	                	<button id="getHeading">Get Heading</button>
-                	</form>
-	                <ul id="currentDirection" data-role="listview" data-inset="true" data-theme="d"></ul>
+                	<p id="geolocation">Finding geolocation...</p>
                 </section>
+            </section>
+            <section id="camera" data-role="page" style="background:transparent;">
+	            <section data-role="content">
+		            <button onclick="capturePhoto();">Capture Photo</button> <br>
+				    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+				    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+				    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+				    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+				    <img style="display:none;" id="largeImage" src="" />
+	            </section>
             </section>
             <!-- Week 1 Research -->
             <section id="week1" data-role="page" style="background:transparent;">
