@@ -11,6 +11,15 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
+    <feature name="Compass">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="ios-package" value="CDVAccelerometer" />
+    </feature>
     <access origin="http://127.0.0.1*" />
     <access origin="http://www.instagram.com" />
     <access origin="https://www.instagram.com" />

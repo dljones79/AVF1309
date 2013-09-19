@@ -12,7 +12,6 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/> 
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
         
         <script src="js/libs/modernizr.custom.min.js"></script>
@@ -29,7 +28,7 @@
                     <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
                         <li data-role="list-divider">Native Features</li>
                         <li><a href="">Camera</a></li>
-                        <li><a href="">Compass</a></li>
+                        <li><a href="#compass">Compass</a></li>
                         <li><a href="">Geolocation</a></li>
                         <li><a href="">Accelerometer</a></li>
                     </ul>
@@ -62,11 +61,20 @@
 		            <a href="#" data-rel="back">Back</a><h1>Weather API</h1>
 	            </div>
 	            <section data-role="content">
-		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d">
-			            
-		            </ul>
+		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d"></ul>
 	            </section> <!-- End of content -->
             </section> <!-- End of Weather section -->
+            <section id="compass" data-role="page" style="background:transparent;">
+	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Compass</h1>
+                </div>
+                <section data-role="content">
+                	<form>
+	                	<button id="getHeading">Get Heading</button>
+                	</form>
+	                <ul id="currentDirection" data-role="listview" data-inset="true" data-theme="d"></ul>
+                </section>
+            </section>
             <!-- Week 1 Research -->
             <section id="week1" data-role="page" style="background:transparent;">
                 <div data-role="header" data-position="fixed" data-add-back-btn="true">
@@ -94,14 +102,11 @@
             </section> <!-- End of week1 -->
         </div> <!-- End of main div -->
         <!-- Linking javascript files -->
-        <script type="text/javascript" src="phonegap.js"></script>
+        <!-- <script type="text/javascript" src="phonegap.js"></script> -->
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
         <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>

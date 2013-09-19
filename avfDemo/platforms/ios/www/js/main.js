@@ -7,6 +7,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 		$("#insta").on("pageinit", displayInstaPics);
 		$("#weather").on("pageinit", displayWeather);
+		$("#getHeading").on("click", displayHeading);
 }; // phonegap deviceready
 
 // Function to get pictures from Instagram API
@@ -45,3 +46,16 @@ var displayWeather = function(){
 		}
 	});	
 };
+
+var displayHeading = function(){
+	navigator.compass.getCurrentHeading(headingSuccess, headingError);
+	
+	var headingSuccess = function(){
+		alert('Current Heading is: ' + heading.magneticHeading);
+	}
+	
+	var headingError = function(){
+		alert('Compass has an error: ' + compassError.code);
+	}
+}
+
