@@ -10,10 +10,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 		$("#insta").on("pageinit", displayInstaPics);
 		$("#weather").on("pageinit", displayWeather);
-		//$("#notification").on("pageinit", runNotifications);
 		pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        $("#geolocate").on("pageinit", displayLocation);
 }; // phonegap deviceready
 
 // Function to get pictures from Instagram API
@@ -126,7 +125,10 @@ var displayWeather = function(){
       alert('Failed because: ' + message);
     }
 //////////////////////////////////////////////////////////////////////////////////////////////Geolocate Test
+var displayLocation = function(){
 
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+};
 function onSuccess(position) {
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
@@ -152,43 +154,26 @@ alert('Latitude: ' + position.coords.latitude + '\n');
 
 function showAlert() {
         navigator.notification.alert(
-            'You are the winner!',  // message
-            'Game Over',            // title
-            'Done'                  // buttonName
+            "You are the winner!",  // message
+            gameOver,            // title
+            "David Jones",                  // buttonName
+            "Dismiss"
         );
-    }
+    };
+    
+    var gameOver = function(){
+	    alert("I am the winner!");
+    };
 
     // Beep three times
     //
     function playBeep() {
         navigator.notification.beep(3);
-    }
+    };
 
     // Vibrate for 2 seconds
     //
     function vibrate() {
         navigator.notification.vibrate(2000);
-    }
-/*
-var runNotifications = function(){
-	var showNotify = function(){
-		navigator.notification.alert(
-			'This is an alert!',
-			'Alert',
-			'Finished'
-		);
-	}
-	
-	var playNotify = function(){
-		navigator.notification.beep(3);
-	}
-	
-	var vibe = function(){
-		navigator.notification.vibrate(2000);
-	}
-	
-	$("#show").on("click", showNotify, false);
-	$("#play").on("click", playNotify, false);
-	$("#shake").on("click", vibe, false);
-}
-*/  
+    };
+

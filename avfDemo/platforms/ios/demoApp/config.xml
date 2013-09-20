@@ -29,6 +29,18 @@
     <feature name="Vibration">
         <param name="ios-package" value="CDVVibration" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+    </feature>
+    <feature name="Contacts">
+        <param name="ios-package" value="CDVContacts" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
     <access origin="http://127.0.0.1*" />
     <access origin="http://www.instagram.com" />
     <access origin="https://www.instagram.com" />
@@ -36,6 +48,9 @@
     <access origin="https://*.instagram.com" />
     <access origin="http://*.wunderground.com" />
     <access origin="https://*.wundergound.com" />
+    <access origin="http://www.fullsail.edu" />
+    <access origin="https://www.fullsail.edu" />
+    <access origin="http://*.fullsail.edu" />
     <access origin="*" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="SuppressesIncrementalRendering" value="false" />
@@ -60,7 +75,7 @@
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="auto-hide-splash-screen" value="false" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />

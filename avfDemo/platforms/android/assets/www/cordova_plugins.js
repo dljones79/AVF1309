@@ -251,6 +251,140 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.media-capture/www/CaptureAudioOptions.js",
+        "id": "org.apache.cordova.core.media-capture.CaptureAudioOptions",
+        "clobbers": [
+            "CaptureAudioOptions"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.media-capture/www/CaptureImageOptions.js",
+        "id": "org.apache.cordova.core.media-capture.CaptureImageOptions",
+        "clobbers": [
+            "CaptureImageOptions"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.media-capture/www/CaptureVideoOptions.js",
+        "id": "org.apache.cordova.core.media-capture.CaptureVideoOptions",
+        "clobbers": [
+            "CaptureVideoOptions"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.media-capture/www/CaptureError.js",
+        "id": "org.apache.cordova.core.media-capture.CaptureError",
+        "clobbers": [
+            "CaptureError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.media-capture/www/MediaFileData.js",
+        "id": "org.apache.cordova.core.media-capture.MediaFileData",
+        "clobbers": [
+            "MediaFileData"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.media-capture/www/MediaFile.js",
+        "id": "org.apache.cordova.core.media-capture.MediaFile",
+        "clobbers": [
+            "MediaFile"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.media-capture/www/capture.js",
+        "id": "org.apache.cordova.core.media-capture.capture",
+        "clobbers": [
+            "navigator.device.capture"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.core.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.network-information/www/network.js",
+        "id": "org.apache.cordova.core.network-information.network",
+        "clobbers": [
+            "navigator.connection",
+            "navigator.network.connection"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.network-information/www/Connection.js",
+        "id": "org.apache.cordova.core.network-information.Connection",
+        "clobbers": [
+            "Connection"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/contacts.js",
+        "id": "org.apache.cordova.core.contacts.contacts",
+        "clobbers": [
+            "navigator.contacts"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/Contact.js",
+        "id": "org.apache.cordova.core.contacts.Contact",
+        "clobbers": [
+            "Contact"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/ContactAddress.js",
+        "id": "org.apache.cordova.core.contacts.ContactAddress",
+        "clobbers": [
+            "ContactAddress"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/ContactError.js",
+        "id": "org.apache.cordova.core.contacts.ContactError",
+        "clobbers": [
+            "ContactError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/ContactField.js",
+        "id": "org.apache.cordova.core.contacts.ContactField",
+        "clobbers": [
+            "ContactField"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/ContactFindOptions.js",
+        "id": "org.apache.cordova.core.contacts.ContactFindOptions",
+        "clobbers": [
+            "ContactFindOptions"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/ContactName.js",
+        "id": "org.apache.cordova.core.contacts.ContactName",
+        "clobbers": [
+            "ContactName"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.contacts/www/ContactOrganization.js",
+        "id": "org.apache.cordova.core.contacts.ContactOrganization",
+        "clobbers": [
+            "ContactOrganization"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.inappbrowser/www/InAppBrowser.js",
+        "id": "org.apache.cordova.core.inappbrowser.InAppBrowser",
+        "clobbers": [
+            "window.open"
+        ]
     }
 ]
 });
