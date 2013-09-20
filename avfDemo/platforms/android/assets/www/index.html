@@ -12,9 +12,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/> 
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/styles.css" />
-        
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />    
         <script src="js/libs/modernizr.custom.min.js"></script>
     </head>
     <body>
@@ -26,24 +24,23 @@
                     <h1>Demo App</h1>
                 </div>
                 <section data-role="content">
-                    <ul data-role="listview" data-ajax="false" data-inset="true" data-theme="d">
+                    <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
                         <li data-role="list-divider">Native Features</li>
-                        <li class='mainNav'><a href="">Camera</a></li>
-                        <li class='mainNav'><a href="">Video</a></li>
-                        <li class='mainNav'><a href="">Compass</a></li>
-                        <li class='mainNav'><a href="">Geolocation</a></li>
-                        <li class='mainNav'><a href="">Accelerometer</a></li>
+                        <li><a href="#camera">Camera</a></li>
+                        <li><a href="#notification">Notifications</a></li>
+                        <li><a href="#geolocate">Geolocation</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
                     </ul>
-                    <ul data-role="listview" data-ajax="false" data-inset="true" data-theme="d">
+                    <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
                         <li data-role="list-divider">Data API's</li>
-                        <li class='mainNav'><a href="#weather">Weather</a></li>
-                        <li class='mainNav'><a href="#insta">Instagram</a></li>
+                        <li><a href="#weather">Weather</a></li>
+                        <li><a href="#insta">Instagram</a></li>
                     </ul>
-                    <ul data-role="listview" data-ajax="false" data-inset="true" data-theme="d">
+                    <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
                         <li data-role="list-divider">Research</li>
-                        <li class='mainNav'><a href="#week1">Week One: Industry Research and Project Intent</a></li>
-                        <li class='mainNav'><a href="">Week Two: Research</a></li>
-                        <li class='mainNav'><a href="">Week Three: Research</a></li>
+                        <li><a href="#week1">Week One: Industry Research and Project Intent</a></li>
+                        <li><a href="">Week Two: Research</a></li>
+                        <li><a href="">Week Three: Research</a></li>
                     </ul>
                 </section>
             </section> <!-- End of Home section -->
@@ -63,11 +60,54 @@
 		            <a href="#" data-rel="back">Back</a><h1>Weather API</h1>
 	            </div>
 	            <section data-role="content">
-		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d">
-			            
-		            </ul>
+		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d"></ul>
 	            </section> <!-- End of content -->
             </section> <!-- End of Weather section -->
+            <!-- Camera Features -->
+            <section id="camera" data-role="page" style="background:transparent;">
+            	<div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Camera</h1>
+                </div>
+	            <section data-role="content">
+		            <button onclick="takePic();">Take a Pic!</button> <br>
+				    <button onclick="shootAndCrop();">Take a Pic and Crop It!</button> <br>
+				    <img style="display:none;width:500px;height:500px;" id="preview" src="" />
+				    <p id="viewData" style="display:none;"></p>
+	            </section>
+            </section> <!-- End of camera section -->
+            <!-- Geolocation Features -->
+            <section id="geolocate" data-role="page" style="background:transparent;">
+	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Geolocate</h1>
+                </div>
+                <section data-role="content">
+                	<ul data-role="listview" data-ajax="false" data-inset="true" class='geoDisplay' data-theme="c">
+                        <li data-role="list-divider">Current Geolocation</li>
+                        <li><p id="geolocation">Loading Geolocation Data....</p></li>
+                    </ul> 
+                </section> <!-- End of geolocate content -->
+            </section> <!-- End of Geolocation Features -->
+            <!-- Notification Page -->
+            <section id="notification" data-role="page" style="background:transparent;">
+            	<div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Notifications</h1>
+                </div>
+	            <section data-role="content">
+	            	<div data-role="controlgroup">
+					    <a href="#" onclick="visualAlert(); return false;" data-role="button">Show An Alert Message</a>
+					    <a href="#" onclick="sounds(); return false;" data-role="button">Make Some Noise</a>
+					    <a href="#" onclick="shakes(); return false;" data-role="button">Shake Your MoneyMaker</a>
+					</div>
+	            </section> <!-- End of content for notification page -->
+            </section> <!-- End of Notification Page -->
+<!-- Testing code -->            
+
+            
+  
+            
+<!-- Testing code -->
+
+            
             <!-- Week 1 Research -->
             <section id="week1" data-role="page" style="background:transparent;">
                 <div data-role="header" data-position="fixed" data-add-back-btn="true">
@@ -95,14 +135,11 @@
             </section> <!-- End of week1 -->
         </div> <!-- End of main div -->
         <!-- Linking javascript files -->
-        <script type="text/javascript" src="phonegap.js"></script>
+        <!-- <script type="text/javascript" src="phonegap.js"></script> -->
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
         <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>

@@ -7,14 +7,13 @@ body {
 	text-shadow: 1px 1px 0px #25135c;
 }
 
-.mainNav {
+.mainNav li {
 	background: rgba(200, 255, 255, 0.25) !important;
 }
 
 .imgLi {
-	background: transparent !important;
-	display: inline-table !important;
-	box-shadow: 2px 2px 4px #888888;
+	display: inline-table !important; 
+	max-width: 100%;
 }
 
 #currentWeather {
@@ -34,6 +33,11 @@ body {
 	background: rgba(200, 255, 255, 0.50);
 }
 
+li:first-child{
+	background: rgba(200, 255, 255, 0.80) !important;
+}
+
+
 /* For portrait layouts only */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
 	body {background-image:url('../img/tree.png') !important};
@@ -43,14 +47,13 @@ body {
 		text-shadow: 1px 1px 0px #25135c;
 	}
 	
-	.mainNav {
+	.mainNav li {
 	background: rgba(200, 255, 255, 0.25) !important;
 	}
 
 	.imgLi {
-		background: transparent !important;
-		display: inline-table !important;
-		box-shadow: 10px 10px 5px #888888;
+		display: inline-table !important; 
+		max-width: 100%;
 	}
 
 	#currentWeather {
@@ -65,6 +68,10 @@ body {
 		font-size: large;
 		font-weight: bold;
 		text-shadow: 1px 1px 0px #25135c;
+	}
+	
+	li:first-child{
+		background: rgba(200, 255, 255, 0.80) !important;
 	}	
 }
 
@@ -76,14 +83,13 @@ body {
 		max-width: 100%;
 		text-shadow: 1px 1px 0px #25135c;
 	}
-	.mainNav {
+	.mainNav li {
 		background: rgba(200, 255, 255, 0.25) !important;
 	}
-
+	
 	.imgLi {
-		background: transparent !important;
-		display: inline-table !important;
-		box-shadow: 10px 10px 5px #888888;
+		display: inline-table !important; 
+		max-width: 100%;
 	}
 
 	#currentWeather {
@@ -98,5 +104,9 @@ body {
 		font-size: large;
 		font-weight: bold;
 		text-shadow: 1px 1px 0px #25135c;
+	}
+	
+	li:first-child{
+		background: rgba(200, 255, 255, 0.80) !important;
 	}
 }

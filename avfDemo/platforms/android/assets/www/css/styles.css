@@ -7,14 +7,13 @@ body {
 	text-shadow: 1px 1px 0px #25135c;
 }
 
-.mainNav {
+.mainNav li {
 	background: rgba(200, 255, 255, 0.25) !important;
 }
 
 .imgLi {
-	background: transparent !important;
-	display: inline-table !important;
-	box-shadow: 2px 2px 4px #888888;
+	display: inline-table !important; 
+	max-width: 100%;
 }
 
 #currentWeather {
@@ -30,18 +29,17 @@ body {
 	font-weight: bold;
 	text-shadow: 1px 1px 0px #25135c;
 }
-
 .research {
 	background: rgba(200, 255, 255, 0.50);
 }
 
-/* For general iPad layouts */
-@media only screen and (device-width: 768px) {
-	
+li:first-child{
+	background: rgba(200, 255, 255, 0.80) !important;
 }
 
+
 /* For portrait layouts only */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
 	body {background-image:url('../img/tree.png') !important};
 	.ui-page {
 		background: url('../img/tree.png') no-repeat;
@@ -49,14 +47,13 @@ body {
 		text-shadow: 1px 1px 0px #25135c;
 	}
 	
-	.mainNav {
+	.mainNav li {
 	background: rgba(200, 255, 255, 0.25) !important;
 	}
 
 	.imgLi {
-		background: transparent !important;
-		display: inline-table !important;
-		box-shadow: 10px 10px 5px #888888;
+		display: inline-table !important; 
+		max-width: 100%;
 	}
 
 	#currentWeather {
@@ -71,25 +68,28 @@ body {
 		font-size: large;
 		font-weight: bold;
 		text-shadow: 1px 1px 0px #25135c;
+	}
+	
+	li:first-child{
+		background: rgba(200, 255, 255, 0.80) !important;
 	}	
 }
 
 /* For landscape layouts only */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) {
 	body {background-image:url('../img/shore.jpg') !important};
 	.ui-page {
 		background: url('../img/shore.jpg') no-repeat;
 		max-width: 100%;
 		text-shadow: 1px 1px 0px #25135c;
 	}
-	.mainNav {
+	.mainNav li {
 		background: rgba(200, 255, 255, 0.25) !important;
 	}
-
+	
 	.imgLi {
-		background: transparent !important;
-		display: inline-table !important;
-		box-shadow: 10px 10px 5px #888888;
+		display: inline-table !important; 
+		max-width: 100%;
 	}
 
 	#currentWeather {
@@ -104,5 +104,9 @@ body {
 		font-size: large;
 		font-weight: bold;
 		text-shadow: 1px 1px 0px #25135c;
+	}
+	
+	li:first-child{
+		background: rgba(200, 255, 255, 0.80) !important;
 	}
 }
