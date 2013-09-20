@@ -2,17 +2,19 @@
 // AVF 1309
 // Demo App
 
-var pictureSource;   // picture source
-var destinationType; // sets the format of returned value
+var pictureSource;   
+var destinationType;
 
+//Event listener for deviceready
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 		$("#insta").on("pageinit", displayInstaPics);
 		$("#weather").on("pageinit", displayWeather);
-		pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
+		pictureSource = navigator.camera.PictureSourceType;
+        destinationType = navigator.camera.DestinationType;
         $("#geolocate").on("pageinit", displayLocation);
+        $("#cam").on("click", camLoad);
 }; // phonegap deviceready
 
 // Function to get pictures from Instagram API
@@ -27,8 +29,8 @@ var displayInstaPics = function(){
 				picture.user.id + "' />";
 			$("#dataOut").append(pics);		
 		});
-	});
-};
+	}); //End of JSON call
+}; //End of instagram feature
 
 // Function to get weather data from API
 var displayWeather = function(){	
@@ -49,131 +51,100 @@ var displayWeather = function(){
 			
 			//alert("Current temperature in " + location + " is: " + temp_f);
 		}
-	});	
+	});	//End of ajax call
+}; //End of weather api feature
+
+
+/* Camera Feature 
+   Takes a picture and displays it on screen
+   Ability to take and do simple edit as well	
+*/
+
+var captureSuccessful = function(imgData) {
+	var preview = document.getElementById('preview');
+    preview.style.display = 'block';
+    preview.style.marginLeft = 'auto';
+    preview.style.marginRight = 'auto';
+    preview.src = "data:image/jpeg;base64," + imgData;
+    var viewData = document.getElementById('viewData');
+    viewData.style.display = "block";
+    viewData.style.marginLeft = "auto";
+    viewData.style.marginRight = "auto";
+    $("#viewData").innerHTML = imgData;
 };
 
-/////////////////////////////////Camera Test
+// Capture the photograph with device camera
+var takePic = function() {
+    navigator.camera.getPicture(captureSuccessful, noJoy, { quality: 100,
+    	destinationType: destinationType.DATA_URL });
+};
 
-    // Called when a photo is successfully retrieved
-    //
-    function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64-encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
-
-    // Called when a photo is successfully retrieved
-    //
-    function onPhotoURISuccess(imageURI) {
-      // Uncomment to view the image file URI
-      // console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    }
-
-    // A button will call this function
-    //
-    function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+// Capture an editable photo with device camera
+var shootAndCrop = function() {
+    navigator.camera.getPicture(captureSuccessful, noJoy, { quality: 100, allowEdit: true,
         destinationType: destinationType.DATA_URL });
-    }
+};
 
-    // A button will call this function
-    //
-    function capturePhotoEdit() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-        destinationType: destinationType.DATA_URL });
-    }
+// If camera fails for some reason
+var noJoy = function(errMessage) {
+    alert('Failed due to: ' + errMessage);
+};
 
-    // A button will call this function
-    //
-    function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
+// End of Camera Feature
 
-    // Called if something bad happens.
-    //
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
-//////////////////////////////////////////////////////////////////////////////////////////////Geolocate Test
+
+/* Geolocation Native Feature
+	Gathers current geolocation data
+	Displays it on screen
+*/    
+// Function to gather current geolocation data
 var displayLocation = function(){
-
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	navigator.geolocation.getCurrentPosition(onGoodLocation, onBadLocation);
 };
-function onSuccess(position) {
+
+// Sends location data to paragraph within list item on page.
+var onGoodLocation = function(position) {
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
                             'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          + position.timestamp                    + '<br />';
-    }
+}; //End of success function for geolocation
 
-alert('Latitude: ' + position.coords.latitude + '\n');
+// If something goes wrong.
+var onBadLocation = function(error) {
+	alert('code: '    + error.code    + '\n' +
+    	'message: ' + error.message + '\n');
+}; //End of failure function for geolocation
 
-    // onError Callback receives a PositionError object
-    //
-    function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-    }
+// End of Geolocation Feature
 
-///////////////////////////Notifications
+//Notification Features
+//Vibrate won't work on iPad (no vibrate on iPad), works on an iPhone
 
-function showAlert() {
+function visualAlert() {
         navigator.notification.alert(
-            "You are the winner!",  // message
-            gameOver,            // title
-            "David Jones",                  // buttonName
-            "Dismiss"
+            "This is a notification message!",
+            notGood,          
+            "Your Name Here",                 
+            "Adios Muchacho" //Name of the button
         );
     };
     
-    var gameOver = function(){
-	    alert("I am the winner!");
-    };
+var notGood = function(){
+	alert("Something went wrong!");
+};
 
-    // Beep three times
-    //
-    function playBeep() {
-        navigator.notification.beep(3);
-    };
+// Beep three times
+//
+var sounds = function() {
+    navigator.notification.beep(3);
+};
 
-    // Vibrate for 2 seconds
-    //
-    function vibrate() {
-        navigator.notification.vibrate(2000);
-    };
+// Vibrate for 2 seconds
+//
+var shakes = function() {
+    navigator.notification.vibrate(2000);
+};
 
+// End of Notification Features

@@ -12,8 +12,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/> 
-        <link rel="stylesheet" type="text/css" href="css/styles.css" />
-        
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />    
         <script src="js/libs/modernizr.custom.min.js"></script>
     </head>
     <body>
@@ -30,7 +29,7 @@
                         <li><a href="#camera">Camera</a></li>
                         <li><a href="#notification">Notifications</a></li>
                         <li><a href="#geolocate">Geolocation</a></li>
-                        <li><a href="#browse">Visit Instagram.com</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
                     </ul>
                     <ul data-role="listview" data-ajax="false" data-inset="true" class='mainNav' data-theme="a">
                         <li data-role="list-divider">Data API's</li>
@@ -64,57 +63,50 @@
 		            <ul id="currentWeather" data-role="listview" data-inset="true" data-theme="d"></ul>
 	            </section> <!-- End of content -->
             </section> <!-- End of Weather section -->
-            
-<!-- Testing code -->            
-
-            <section id="geolocate" data-role="page" style="background:transparent;">
-	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
-                    <a href="#" data-rel="back">Back</a><h1>Geolocate</h1>
-                </div>
-                <section data-role="content">
-                	<p id="geolocation">Finding geolocation...</p>
-                </section>
-            </section>
+            <!-- Camera Features -->
             <section id="camera" data-role="page" style="background:transparent;">
             	<div data-role="header" data-position="fixed" data-add-back-btn="true">
                     <a href="#" data-rel="back">Back</a><h1>Camera</h1>
                 </div>
 	            <section data-role="content">
-		            <button onclick="capturePhoto();">Capture Photo</button> <br>
-				    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
-				    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-				    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
-				    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-				    <img style="display:none;" id="largeImage" src="" />
+		            <button onclick="takePic();">Take a Pic!</button> <br>
+				    <button onclick="shootAndCrop();">Take a Pic and Crop It!</button> <br>
+				    <img style="display:none;width:500px;height:500px;" id="preview" src="" />
+				    <p id="viewData" style="display:none;"></p>
 	            </section>
-            </section>
+            </section> <!-- End of camera section -->
+            <!-- Geolocation Features -->
+            <section id="geolocate" data-role="page" style="background:transparent;">
+	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                    <a href="#" data-rel="back">Back</a><h1>Geolocate</h1>
+                </div>
+                <section data-role="content">
+                	<ul data-role="listview" data-ajax="false" data-inset="true" class='geoDisplay' data-theme="c">
+                        <li data-role="list-divider">Current Geolocation</li>
+                        <li><p id="geolocation">Loading Geolocation Data....</p></li>
+                    </ul> 
+                </section> <!-- End of geolocate content -->
+            </section> <!-- End of Geolocation Features -->
+            <!-- Notification Page -->
             <section id="notification" data-role="page" style="background:transparent;">
             	<div data-role="header" data-position="fixed" data-add-back-btn="true">
                     <a href="#" data-rel="back">Back</a><h1>Notifications</h1>
                 </div>
 	            <section data-role="content">
-	            <!--
-		            <div data-role="controlgroup">
-			            <a href="#" data-role="button" id="show">Show Notification!</a>
-			            <a href="#" data-role="button" id="play">Play Sound!</a>
-			            <a href="#" data-role="button" id="shake">Shake Your Moneymaker!</a>
-			        </div>
-			     -->
-				     <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
-				     <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
-				     <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
-	            </section>
-            </section>
-            <section id="browse" data-role="page" style="background:transparent;">
-	            <div data-role="header" data-position="fixed" data-add-back-btn="true">
-                    <a href="#" data-rel="back">Back</a><h1>Browser</h1>
-                </div>
-                <section data-role="content">
-	                <p>Loading Fullsail.edu.....</p>
-                </section>
-            </section>
-       
+	            	<div data-role="controlgroup">
+					    <a href="#" onclick="visualAlert(); return false;" data-role="button">Show An Alert Message</a>
+					    <a href="#" onclick="sounds(); return false;" data-role="button">Make Some Noise</a>
+					    <a href="#" onclick="shakes(); return false;" data-role="button">Shake Your MoneyMaker</a>
+					</div>
+	            </section> <!-- End of content for notification page -->
+            </section> <!-- End of Notification Page -->
+<!-- Testing code -->            
+
+            
+  
+            
 <!-- Testing code -->
+
             
             <!-- Week 1 Research -->
             <section id="week1" data-role="page" style="background:transparent;">
